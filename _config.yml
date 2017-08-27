@@ -2,7 +2,7 @@
 
 name: Chalk
 paginate: 25
-url: http://oeeo.github.io/ # add your site url (format: https://example.com/)
+url: http://oeeo.github.io/ 
 blog_theme: light # Or use dark
 
 # Optional settings
