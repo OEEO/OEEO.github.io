@@ -5,7 +5,7 @@ permalink:      /:year-:month-:day/:title
 title:          Tale
 paginate:       5
 baseurl:        ""
-url:            "https://chesterhow.github.io/tale"
+url:            "https://oeeo.github.io"
 
 # Assets
 sass:
@@ -18,8 +18,8 @@ markdown:       kramdown
 # About
 author:
   name:         Chester How
-  url:          http://chester.how
-  email:        chesterhow@gmail.com
+  url:          https://oeeo.github.io
+  email:        814731008@qq.com
 
 # Custom vars
 version:        3.4.1
