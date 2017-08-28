@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dean</title>
+    <description></description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 28 Aug 2017 13:14:31 +0800</pubDate>
+    <lastBuildDate>Mon, 28 Aug 2017 13:14:31 +0800</lastBuildDate>
+    <generator>Jekyll v3.5.2</generator>
+    
+      <item>
+        <title>学习笔记</title>
+        <description>&lt;ul&gt;
+  &lt;li&gt;
+    当使用sort()来排列字母时，里面不需要加函数。例如’bcdefghkabb’.split(‘’).sort();//abbbcdefghk
+  &lt;/li&gt;
+  &lt;li&gt;
+    new Set()去重[…(new Set(‘kfeebabcdeabc’))].sort().join(‘’);//abcdefk
+  &lt;/li&gt;
+  &lt;li&gt;
+    substring(start,end)。slice(start,end)。substr(start,length);都是包括start，不包括end。前两者区别在于，slice()的end可以用负数表示从后往前数。
+  &lt;/li&gt;
+  &lt;li&gt;
+    toString(2)可以将数字转换成二进制，其它进制类似。
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;strong&gt;操作数组，字符串，对象的方法总结。例如：遍历，根据条件排序，截取，分离…….&lt;/strong&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    return、break、continue；假如有两层循环，这三个字符串用在里面的循环中：
+
+    return 会中止所有循环
+
+    break会中止里一层的循环，从上一层循环继续
+
+    continue会中止此次循环中里一层的循环的后面代码的执行，从这一层循环继续
+  &lt;/li&gt;
+  &lt;li&gt;
+    数组和字符串都可以用indexOf()方法，来检索。
+  &lt;/li&gt;
+  &lt;li&gt;
+    字符与ASCII值的转换
+
+    ‘str’.charCodeAt();    //字符转ASCII值 ，例如’a’.charCodeAt()   //97
+
+    var str = String.fromCharCode(num)，例如 String.fromCharCode( 97 ) //a
+  &lt;/li&gt;
+  &lt;li&gt;
+    正则表达式中添加变量的方法，用构造函数的方式创建正则表达式
+
+    例如创建一个变量 i 重复三次的正则表达式
+
+    var str = new RegExp( i + ‘{3}’ );
+  &lt;/li&gt;
+  &lt;li&gt;
+    下面列出的值被当做假：false 、null 、undefined 、空字符串’’ 、数字0 、数字NaN。
+
+    其他所有的值都被当做真，包括true、字符串“false“，以及所有对象。
+
+    &amp;amp;&amp;amp;，如果第一个运算数的值为假，那么产生第1个运算数的值，否则产生第2个运算数的值。
+
+    逻辑或，如果第一个运算数的值为真，那么产生第1个运算数的值，否则产生第2个运算数的值
+  &lt;/li&gt;
+  &lt;li&gt;
+    在JS中，对象的比较，是引用的比较，就算属性名与值都完全一样，也可能是不等的。
+
+    例如：
+
+    ​	    console.log({a:1} === {a:1});//&lt;strong&gt;false&lt;/strong&gt;
+
+    ​	    var a = {num:1};    var b = {num:1};  console.log(a === b);//&lt;strong&gt;false&lt;/strong&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    对象是通过引用来传递的。它们永远不会被复制
+
+    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{},&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{},&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{};&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//a、b、c每个都引用一个不同的空对象&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{};&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{};&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//a、b、c都引用同一个空对象&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    用正则表达式判断内容里是否含有什么
+
+    例如一道题：匹配输入的内容password必须是，只能包含数字和字母，长度至少8位，而且必须至少有1个数字，1个小写字母，1个大写字母。
+
+    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;/^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(?&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])(?&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])(?&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Z&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;zA&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Z&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,}&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;//三个正向前瞻条件并列，确保至少有1个数字，1个小写字母，1个大写字母&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    当数字超过一定长度时，js就会把它转成科学记数法。此时，如果想保留完整的字符，就要转成字符串。
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Sun, 27 Aug 2017 06:14:54 +0800</pubDate>
+        <link>http://localhost:4000/2017/08/27/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/08/27/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+        
+        <category>数组</category>
+        
+        <category>字符串</category>
+        
+        <category>正则表达式</category>
+        
+        
+        <category>DayNotes</category>
+        
+      </item>
+    
+      <item>
+        <title>百度前端学院做题总结</title>
+        <description>&lt;h2 id=&quot;综合需求&quot;&gt;综合需求&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;select下拉菜单的模拟&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;js&quot;&gt;JS&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;处理数组，处理字符串的常用方法和场景总结&lt;/li&gt;
+  &lt;li&gt;判断中文的正则表达式： [\u4e00-\u9fa5]&lt;/li&gt;
+  &lt;li&gt;正测表达式使用又忘记&lt;/li&gt;
+  &lt;li&gt;用addEventListener()方法来批量添加事件，以及添加多事件&lt;/li&gt;
+  &lt;li&gt;var a = {}; 可以用JSON.stringify(a) === ‘{}’ 来判断对象是否为空&lt;/li&gt;
+  &lt;li&gt;让物体沿曲线轨迹运动&lt;/li&gt;
+  &lt;li&gt;clearInterval()，clearTimeout()，的时候并不会终结此次运行，如果要结束，记得再加return&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;css3&quot;&gt;CSS3&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;transition过渡动画&lt;/li&gt;
+  &lt;li&gt;nth-child(odd)奇，nth-child(even)偶，nth-child(n)   p:nth-child(2)，选择(属于其父元素的第2个子元素且为p元素)，p:nth-of-type(2)，选择(属于其父元素的第2个p元素，不会计算其它元素)&lt;/li&gt;
+  &lt;li&gt;animation 与@keyframes函数结合使用&lt;/li&gt;
+  &lt;li&gt;@media screen   window.onresize&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;css&quot;&gt;CSS&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    inline-block元素是基于基线对齐的，这一点类似于inline元素，可以用vertical-align设置对齐方式。
+
+    float元素则是基于顶部对齐的。
+
+    在子元素都设置了inline-block时，记得设置一下vertical-align，以避免不可预测的错误
+  &lt;/li&gt;
+  &lt;li&gt;
+    当元素素设置了width及height具体值时，子元素可以超出父元素的范围，不会挣开父元素。如果父元素没设置，则父元素随子元素增大而增大(浮动的子元素要清除浮动)
+  &lt;/li&gt;
+  &lt;li&gt;
+    当元素设置  display=”inline-block”，与后面的标签之间如果有空格，空行，会产生空白文本节点#text，width=5px，height=21px ，经常会因为这一点而产生一些被忽略的问题
+
+    &lt;strong&gt;消除空白节点的方法如下&lt;/strong&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;去除元素间的空格&lt;/li&gt;
+      &lt;li&gt;你可以用负边距来补齐空白。但你需要调整font-size，因为空白的宽度与这个属性有关系。大约为0.25em&lt;/li&gt;
+      &lt;li&gt;给父元素设置font-size:0; 不过这样就要重新给子元素设置font-size&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    用px做单位时候，缩放网页会出现错位问题。
+  &lt;/li&gt;
+  &lt;li&gt;
+    清除浮动.clearfloat:after{display:block;clear:both;content:”“;visibility:hidden;height:0}    //就是用:after伪类创建一个元素，内容为空，高度为0，不可见，块区，清除左右浮动
+​      .clearfloat{zoom:1}//兼容ie6
+  &lt;/li&gt;
+  &lt;li&gt;
+    居中问题。
+
+    block元素就用，设置width，margin:0 auto，
+
+    inline，inline-block元素，就在父元素加text-align
+  &lt;/li&gt;
+  &lt;li&gt;
+    妙用checked加~，模拟select下拉菜单效果
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;正则表达式&quot;&gt;正则表达式&lt;/h2&gt;
+
+含义：reg exp 使用单个字符串来描述、匹配一系列符合某个句法规则的字符串
+
+&lt;h4 id=&quot;--&quot;&gt;/  /&lt;/h4&gt;
+
+&lt;h4 id=&quot;d-d-s-s-w-w-b-b-n--r&quot;&gt;\d	\D	\s	\S	\w	\W	\b	\B	\n	.	\r&lt;/h4&gt;
+
+&lt;h4 id=&quot;nm-n-n--------------&quot;&gt;{n,m}	{n}	{n,}		( )	[ ]	-	^	$	[^]	+	*	?	|&lt;/h4&gt;
+
+&lt;h4 id=&quot;g-i-m&quot;&gt;g	i	m&lt;/h4&gt;
+
+&lt;h4 id=&quot;d37--d--d37-good3-good3&quot;&gt;\d{3,7}?		\d+?		\d{3,7}	good{3}	(good){3}&lt;/h4&gt;
+
+&lt;h4 id=&quot;前瞻&quot;&gt;前瞻&lt;/h4&gt;
+
+&lt;h4 id=&quot;正向前瞻expassert&quot;&gt;正向前瞻：exp(?=assert)&lt;/h4&gt;
+
+&lt;h4 id=&quot;负向前瞻expassert&quot;&gt;负向前瞻：exp(?!assert)&lt;/h4&gt;
+
+&lt;h4 id=&quot;正则表达式常用方法test--exec&quot;&gt;正则表达式常用方法：test()		exec()&lt;/h4&gt;
+
+&lt;h4 id=&quot;字符串常用方法search-match-split-replaceregstr&quot;&gt;字符串常用方法：search()	match()	split()	replace(reg,str)&lt;/h4&gt;
+
+&lt;h4 id=&quot;replaceregfunctionreturn-someting&quot;&gt;replace(reg,function(){return someting})&lt;/h4&gt;
+
+</description>
+        <pubDate>Wed, 16 Aug 2017 06:14:54 +0800</pubDate>
+        <link>http://localhost:4000/2017/08/16/%E7%99%BE%E5%BA%A6%E5%89%8D%E7%AB%AF%E5%AD%A6%E9%99%A2%E5%81%9A%E9%A2%98%E5%8F%91%E7%8E%B0%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/08/16/%E7%99%BE%E5%BA%A6%E5%89%8D%E7%AB%AF%E5%AD%A6%E9%99%A2%E5%81%9A%E9%A2%98%E5%8F%91%E7%8E%B0%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/</guid>
+        
+        <category>百度前端</category>
+        
+        
+        <category>issue</category>
+        
+      </item>
+    
+  </channel>
+</rss>

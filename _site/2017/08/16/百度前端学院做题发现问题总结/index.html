@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>百度前端学院做题总结</title>
+    <meta name="description" content="综合需求  select下拉菜单的模拟JS  处理数组，处理字符串的常用方法和场景总结  判断中文的正则表达式： [\u4e00-\u9fa5]  正测表达式使用又忘记  用addEventListener()方法来批量添加事件，以及添加多事件  var a = {}; 可以用JSON.stringify(a) ...">
+
+    <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_8v3czwksspqlg14i.css">
+    <link rel="stylesheet" href="/css/main.css ">
+    <link rel="canonical" href="http://localhost:4000/2017/08/16/%E7%99%BE%E5%BA%A6%E5%89%8D%E7%AB%AF%E5%AD%A6%E9%99%A2%E5%81%9A%E9%A2%98%E5%8F%91%E7%8E%B0%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/">
+    <link rel="alternate" type="application/rss+xml" title="Dean" href="http://localhost:4000/feed.xml ">
+
+
+    <script>
+    // 百度统计代码
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?c6e0498f3f7f03bdf292da1b77e5673f";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+
+
+
+</head>
+
+
+  <body>
+
+    <header id="top">
+    <div class="wrapper">
+        <a href="/" class="brand">Dean</a>
+        <small>Front-end Dev Engineer</small>
+        <button id="headerMenu" class="menu"><i class="fa fa-bars"></i></button>
+        <nav id="headerNav">
+            <ul>
+                <li>
+                    
+                    <a href="/">
+                    
+                        <i class="fa fa-home"></i>Home
+                    </a>
+                </li>
+
+                
+                    
+                    <li>
+                        
+                        <a href="/archive/">
+                        
+                            <i class="fa fa-archive"></i>Archives
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/category/">
+                        
+                            <i class="fa fa-th-list"></i>Categories
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/tag/">
+                        
+                            <i class="fa fa-tags"></i>Tags
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/collection/">
+                        
+                            <i class="fa fa-bookmark"></i>Collections
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/demo/">
+                        
+                            <i class="fa fa-play"></i>Demo
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/about/">
+                        
+                            <i class="fa fa-heart"></i>About
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+        <div class="page clearfix" post>
+    <div class="left">
+        <h1>百度前端学院做题总结</h1>
+        <div class="label">
+
+            <div class="label-card">
+                <i class="fa fa-calendar"></i>2017-08-16
+            </div>
+
+            <div class="label-card">
+                
+            </div>
+
+            <div class="label-card">
+                
+            </div>
+
+            <div class="label-card">
+            
+
+
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#issue" title="Category: issue" rel="category">issue</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
+
+            </div>
+
+            <div class="label-card">
+            
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+        <!--a href="/tag/#%E7%99%BE%E5%BA%A6%E5%89%8D%E7%AB%AF" title="Tag: 百度前端" rel="tag">百度前端</a-->
+        <a href="/tag/#百度前端" title="Tag: 百度前端" rel="tag">百度前端</a>
+    
+  
+
+</span>
+
+            </div>
+
+        </div>
+        <hr>
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+        <h2 id="综合需求">综合需求</h2>
+
+<ul>
+  <li>select下拉菜单的模拟</li>
+</ul>
+
+<h2 id="js">JS</h2>
+
+<ul>
+  <li>处理数组，处理字符串的常用方法和场景总结</li>
+  <li>判断中文的正则表达式： [\u4e00-\u9fa5]</li>
+  <li>正测表达式使用又忘记</li>
+  <li>用addEventListener()方法来批量添加事件，以及添加多事件</li>
+  <li>var a = {}; 可以用JSON.stringify(a) === ‘{}’ 来判断对象是否为空</li>
+  <li>让物体沿曲线轨迹运动</li>
+  <li>clearInterval()，clearTimeout()，的时候并不会终结此次运行，如果要结束，记得再加return</li>
+</ul>
+
+<h2 id="css3">CSS3</h2>
+
+<ul>
+  <li>transition过渡动画</li>
+  <li>nth-child(odd)奇，nth-child(even)偶，nth-child(n)   p:nth-child(2)，选择(属于其父元素的第2个子元素且为p元素)，p:nth-of-type(2)，选择(属于其父元素的第2个p元素，不会计算其它元素)</li>
+  <li>animation 与@keyframes函数结合使用</li>
+  <li>@media screen   window.onresize</li>
+</ul>
+
+<h2 id="css">CSS</h2>
+
+<ul>
+  <li>
+    <p>inline-block元素是基于基线对齐的，这一点类似于inline元素，可以用vertical-align设置对齐方式。</p>
+
+    <p>float元素则是基于顶部对齐的。</p>
+
+    <p>在子元素都设置了inline-block时，记得设置一下vertical-align，以避免不可预测的错误</p>
+  </li>
+  <li>
+    <p>当元素素设置了width及height具体值时，子元素可以超出父元素的范围，不会挣开父元素。如果父元素没设置，则父元素随子元素增大而增大(浮动的子元素要清除浮动)</p>
+  </li>
+  <li>
+    <p>当元素设置  display=”inline-block”，与后面的标签之间如果有空格，空行，会产生空白文本节点#text，width=5px，height=21px ，经常会因为这一点而产生一些被忽略的问题</p>
+
+    <p><strong>消除空白节点的方法如下</strong></p>
+
+    <ul>
+      <li>去除元素间的空格</li>
+      <li>你可以用负边距来补齐空白。但你需要调整font-size，因为空白的宽度与这个属性有关系。大约为0.25em</li>
+      <li>给父元素设置font-size:0; 不过这样就要重新给子元素设置font-size</li>
+    </ul>
+  </li>
+  <li>
+    <p>用px做单位时候，缩放网页会出现错位问题。</p>
+  </li>
+  <li>
+    <p>清除浮动.clearfloat:after{display:block;clear:both;content:”“;visibility:hidden;height:0}    //就是用:after伪类创建一个元素，内容为空，高度为0，不可见，块区，清除左右浮动
+​      .clearfloat{zoom:1}//兼容ie6</p>
+  </li>
+  <li>
+    <p>居中问题。</p>
+
+    <p>block元素就用，设置width，margin:0 auto，</p>
+
+    <p>inline，inline-block元素，就在父元素加text-align</p>
+  </li>
+  <li>
+    <p>妙用checked加~，模拟select下拉菜单效果</p>
+  </li>
+</ul>
+
+<h2 id="正则表达式">正则表达式</h2>
+
+<p>含义：reg exp 使用单个字符串来描述、匹配一系列符合某个句法规则的字符串</p>
+
+<h4 id="--">/  /</h4>
+
+<h4 id="d-d-s-s-w-w-b-b-n--r">\d	\D	\s	\S	\w	\W	\b	\B	\n	.	\r</h4>
+
+<h4 id="nm-n-n--------------">{n,m}	{n}	{n,}		( )	[ ]	-	^	$	[^]	+	*	?	|</h4>
+
+<h4 id="g-i-m">g	i	m</h4>
+
+<h4 id="d37--d--d37-good3-good3">\d{3,7}?		\d+?		\d{3,7}	good{3}	(good){3}</h4>
+
+<h4 id="前瞻">前瞻</h4>
+
+<h4 id="正向前瞻expassert">正向前瞻：exp(?=assert)</h4>
+
+<h4 id="负向前瞻expassert">负向前瞻：exp(?!assert)</h4>
+
+<h4 id="正则表达式常用方法test--exec">正则表达式常用方法：test()		exec()</h4>
+
+<h4 id="字符串常用方法search-match-split-replaceregstr">字符串常用方法：search()	match()	split()	replace(reg,str)</h4>
+
+<h4 id="replaceregfunctionreturn-someting">replace(reg,function(){return someting})</h4>
+
+
+        </article>
+        <hr>
+
+        
+        
+            
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
+
+        <div class="post-recent">
+    <div class="pre">
+        
+    </div>
+    <div class="nex">
+
+        
+        <p><strong>下一篇</strong> <a href="/2017/08/27/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></p>
+        
+    </div>
+</div>
+
+
+        <h2 id="comments">Comments</h2>
+        
+
+
+
+
+
+    </div>
+    <button class="anchor"><i class="fa fa-anchor"></i></button>
+    <div class="right">
+        <div class="wrap">
+
+            <!-- Content -->
+            <div class="side content">
+                <div>
+                    Content
+                </div>
+                <ul id="content-side" class="content-ul">
+                    
+                    <li><a href="#comments">Comments</a></li>
+                </ul>
+            </div>
+            <!-- 其他div框放到这里 -->
+            <!-- <div class="side">bbbb</div> -->
+        </div>
+    </div>
+</div>
+<script>
+/**
+ * target _blank
+ */
+(function() {
+    var aTags = document.querySelectorAll('article a:not([id])')
+    for (var i = 0; i < aTags.length; i++) {
+        aTags[i].setAttribute('target', '_blank')
+    }
+}());
+</script>
+<script src="/js/pageContent.js " charset="utf-8"></script>
+
+
+    <footer class="site-footer">
+
+
+    <div class="wrapper">
+
+        <p class="description">
+            
+        </p>
+        <p class="contact">
+            Contact me at: 
+            <a href="https://github.com/oeeo" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a> 
+            <a href="https://www.zhihu.com/people/DeanRand" title="Zhihu"><i class="iconfont icon-daoruzhihu"></i></a> 
+            <a href="https://www.codewars.com/users/OEEO" title="Codewars"><i class="fa fa-certificate" aria-hidden="true"></i></a>   
+        </p>
+        <p>
+            本站总访问量<span id="busuanzi_value_site_pv"></span>次，本站访客数<span id="busuanzi_value_site_uv"></span>人次，本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+        </p>
+        <p class="power">
+            <span>
+                Site powered by <a href="https://jekyllrb.com/">Jekyll</a> & <a href="https://pages.github.com/">Github Pages</a>.
+            </span>
+            <span>
+                Theme designed by <a href="https://github.com/Gaohaoyang">HyG</a>.
+            </span>
+        </p>
+    </div>
+</footer>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <div class="back-to-top">
+    <a href="#top" data-scroll>
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </a>
+</div>
+
+    <script src=" /js/main.js " charset="utf-8"></script>
+    <script src=" /js/smooth-scroll.min.js " charset="utf-8"></script>
+    <script type="text/javascript">
+      smoothScroll.init({
+        speed: 500, // Integer. How fast to complete the scroll in milliseconds
+        easing: 'easeInOutCubic', // Easing pattern to use
+        offset: 20, // Integer. How far to offset the scrolling anchor location in pixels
+      });
+    </script>
+    <!-- <script src=" /js/scroll.min.js " charset="utf-8"></script> -->
+  </body>
+
+</html>
