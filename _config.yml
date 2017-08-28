@@ -23,7 +23,7 @@ zhihu_username: Dean
 linkedIn_username: 
 dribbble_username:
 
-description_footer: 好好珍惜今天吧，说不定就没有明天了。
+description_footer: 
 
 # comments
 # two ways to comment, only choose one, and use your own short name
@@ -35,8 +35,8 @@ disqus_shortname: oeeo
 # 百度统计 id，将统计代码替换为自己的百度统计id，即
 # hm.src = "//hm.baidu.com/hm.js?xxxxxxxxxxxx";
 # xxxxx字符串
-baidu_tongji_id: cf8506e0ef223e57ff6239944e5d46a4
-google_analytics_id: UA-72449510-4 # google 分析追踪id
+baidu_tongji_id: c6e0498f3f7f03bdf292da1b77e5673f
+google_analytics_id: #UA-72449510-4  google 分析追踪id
 
 # Build settings
 markdown: kramdown
