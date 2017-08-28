@@ -290,9 +290,6 @@ header {
   *zoom: 1; }
 
 #home-page {
-  width: 1500px;
-  box-sizing: border-box;
-  margin: 0 auto;
   background-color: transparent;
   box-shadow: none;
   padding: 0; }
