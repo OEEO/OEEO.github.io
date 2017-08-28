@@ -8,11 +8,16 @@
     }
     .left {
         >ul {
+            margin-top: 0;
             padding: 0;
             >li {
                 list-style: none;
+                padding: 20px 30px;
+                background-color: #f8f8fd;
+                box-shadow: 0 1px 2px rgba(0,0,0,0.4),0 0 30px rgba(10,10,0,0.1) inset;
             }
             li {
+                margin-bottom: 30px;
                 color: #333;
                 h2 {
                     border: none;

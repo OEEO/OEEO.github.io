@@ -290,17 +290,14 @@ header {
   *zoom: 1; }
 
 .page {
-  width: 1140px;
+  width: 1500px;
   box-sizing: border-box;
   margin: 0 auto; }
   .page .left {
     width: 75%;
     float: left;
-    padding: 20px 30px;
     line-height: 1.6;
-    font-size: 16px;
-    background-color: #f8f8fd;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 0 30px rgba(10, 10, 0, 0.1) inset; }
+    font-size: 16px; }
     .page .left > h1 {
       margin-bottom: -10px; }
     .page .left a:not([title]) {
@@ -684,10 +681,15 @@ pre {
   .page[index] a:hover {
     color: #223253; }
 .page[index] .left > ul {
+  margin-top: 0;
   padding: 0; }
   .page[index] .left > ul > li {
-    list-style: none; }
+    list-style: none;
+    padding: 20px 30px;
+    background-color: #f8f8fd;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 0 30px rgba(10, 10, 0, 0.1) inset; }
   .page[index] .left > ul li {
+    margin-bottom: 30px;
     color: #333; }
     .page[index] .left > ul li h2 {
       border: none;
