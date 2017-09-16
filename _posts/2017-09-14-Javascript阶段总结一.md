@@ -150,6 +150,28 @@ if(name !== null){  } else{   };
 
 ## 对象
 
+### Date()
+
+在调用Date()构造函数而不传参的情况下，新创建的对象自动获取当前日期与时间。
+
+### caller
+
+caller是函数对象的一个属性。这个属性中保存着调用当前函数的函数的引用。
+
+例如：
+
+```javascript
+function outer(){
+  inner();
+}
+function inner(){
+  alert(inner.caller);
+}
+outer();//function outer(){inner();}
+```
+
+
+
 ### 对象&数组的比较都是引用的比较
 
 因此，在比较对象&数组的值是否全等时，不能直接比较，要先用toString()，把它们转换成字符串再比较。
@@ -321,6 +343,7 @@ console.log(arr.length);//101
   - filter()   判断数组的每一项是否符合某个条件，为true时，返回该项，最后形成新数组
   - every()   判断数组的每一项是否附合某一条件，全部附合，返回true，否则false
   - some()    判断数组是否有一项附合某一条件，有一项附合，返回true，否则false
+  - reduce()，reduceRight()，数组归并方法
 
   **注：**由于map()方法写起来方便，所以能用map的地方尽量用map，但是当遍历需要中断时，还是需要用for()。 
 
@@ -336,6 +359,16 @@ arr = arr.reverse().filter(function(v,index,arr){
   return arr.indexOf(v,index + 1) === -1;
 }).reverse();//[1,2,3,4,5,6]
 ```
+
+
+
+### Math
+
+Math.max()方法用于数组。可以这样
+
+var values = [1,2,3,5,9,1,2,5,6];
+
+var max = Math.max.apply(Math,values);
 
 
 
@@ -362,7 +395,7 @@ console.log(a.toStirng(2));//10
 
   - str.charCodeAt(index)；返回str对应下标的字符的unicode编码数字。
 
-    //注：fromCharCode(num)；则返回对应unicode编码数字num的字符。
+    //注：String.fromCharCode(num1,num2....)；则返回对应unicode编码数字num的字符，可传递多参数，用逗号分隔。
 
   - string.indexOf(str)；返回字符str在string中首次出现的位置，如果没匹配，返回-1
 
@@ -376,6 +409,7 @@ console.log(a.toStirng(2));//10
 
 - 截取字符串片段
 
+  - trim()；这个方法会创建一个字符串的副本，删除前置及后缀的所有空格。
   - slice(start,end)；包括start，不包括end，如果只传入一个参数，则从参数开始到尾
   - substring(start,end)；和slice相似，就是end用使用负数时会自动转为0
   - substr(start, howmany)；与前两者不同，这个方法第2个参数是要截取的长度
