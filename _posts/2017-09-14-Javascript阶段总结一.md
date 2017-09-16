@@ -172,6 +172,97 @@ outer();//function outer(){inner();}
 
 
 
+### 原型链
+
+只要创建一个新函数，就会根据一组特定的规则为该函数创建一个prototype属性，该属性指向函数的原型对象。
+
+在默认情况下，所有原型对象都会自动获得一个constructor属性，该属性指向prototype属性所在的函数，即构造函数。
+
+通过构造函数创建一个新的实例对象的时候，新的实例对象中的`__proto__` 属性会指向构造函数的原型对象。
+
+实例对象与构造函数之间没有直接的关系，不过实例对象可以获取构造函数的原型对象中的constructor属性，从而建立起与构造函数的关系。
+
+prototype属性指向问题：
+
+```javascript
+function Person(){
+}
+Person.prototype = {
+  	constructor: Person,
+    hands: 2,
+  	feet: 2,
+  	favColor:['red','green']
+}
+//在这里，让Person.prototype指向了另一个新创建的对象，构造函数原来的原型对象变得不可访问。
+//而这个Person.prototype所指向的对象，如果不写constructor:Person的话，就没有这个属性，就
+//会往原型链查找，直到Object.prototype查找到，因此如果不写constructor:Person，
+//constructor就会指向Object
+var person1 = new Person();
+var person2 = new Person();
+person1.favColor.push('purple');
+//在这里，由于favColor的属性值是一个数组，是一个引用类型，person1.favColor只是一个指向这个数组的指针，而person1.favColor与person2.favColor指向的是同一个数组。
+console.log(person1.favColor);//['red','green','purple']
+console.log(person2.favColor);//['red','green','purple']
+```
+
+因此实际开发中，常常是把构造函数模式与原型模式组合使用
+
+构造函数模式用来赋值，原型模式用来保存方法；
+
+而当涉及到继承问题时，就会用原型链和借用构造函数的组合，称组合继承。
+
+```javascript
+	function Human(){
+		this.hands = 2;
+		this.feet = 2;
+		this.features = ['eyes','ears','mouth','nouses','eyebrows'];
+		this.sex = 'males';
+	}
+
+	Human.prototype.makelove = function(){
+		if(this.sex === 'males'){
+			console.log(this.name + ' You need to fuck with a females!')
+		}
+		else{
+			console.log(this.name + ' You need to fuck with a males!')
+		}
+	}
+
+	function Chinese(){
+		Human.call(this);//关键，借用构造函数，避免new Chinese()中的引用类型的值都指向Chinese.prototype中的那个引用类型
+		this.complexion = 'yellow';
+		this.motherland = 'China';
+	}
+
+	Chinese.prototype = new Human();
+	console.log(Chinese.prototype.features);
+	//['eyes','ears','mouth','nouses','eyebrows']
+	var wang = new Chinese();
+	wang.name = 'Wang';
+	wang.sex = 'males';
+	wang.makelove();
+
+	var li = new Chinese();
+	li.features.pop();
+
+	console.log(wang.features);//['eyes','ears','mouth','nouses','eyebrows']
+	console.log(li.features);//['eyes','ears','mouth','nouses']
+```
+
+
+
+常用方法：
+
+* isPrototypeOf()
+* Object.getPrototypeOf()
+* hasOwnProperty()
+* hasPrototypeProperty()
+* for - in     &   in  单独使用     获取对象上的可枚举属性，也包括原型对象上的属性
+* Object.getOwnPropertyNames()    获取所有实例属性，包括不可枚举的。
+* Object.keys()     接收一个对象作为参数，返回一个包含所有可枚举属性的字符串数组。参数是实例对象就获取实例对象的属性，对象是原型对象就获取原型对象上的属性。
+
+
+
 ### 对象&数组的比较都是引用的比较
 
 因此，在比较对象&数组的值是否全等时，不能直接比较，要先用toString()，把它们转换成字符串再比较。
